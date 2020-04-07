@@ -1,0 +1,13 @@
+
+body{
+    padding: 5px;
+}
+.boldclass{
+    font-weight: bold;
+}
+.colorclass{
+    color:gray;
+}
+.italicclass{
+    font-style: italic;
+}

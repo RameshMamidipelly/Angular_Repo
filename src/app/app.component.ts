@@ -14,7 +14,7 @@ export class AppComponent {
    isActives=false;  
    num=4;
    onsava(){
-    let num=09;
+    let num=109;
    }
 
    onsave($event){

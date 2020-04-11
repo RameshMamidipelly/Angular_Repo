@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +13,7 @@ export class AppComponent {
    isActive=false;
    isActives=false;  
    num=4;
+   
    onsava(){
     let num=109;
    }

@@ -1,48 +1,52 @@
 <body>
-<p>courses works!</p>
-<!-- name:<input [value]='name' (input)='name=$event.target.value'/><br> -->
-name:<input [(ngModel)]='name'/><br>
-your enterd : {{name}}
+
+    <app-ram [all]='getALLlen()' [mat]='getMATlen()' [phy]='getPHYlen()' (selectChanged)="onchangebutonchange($event)">
+        loddddddddddddddddd</app-ram>
+        
+    <input [value]="getALLlen()" type="text" />
+    <p>courses works!</p>
+    <!-- name:<input [value]='name' (input)='name=$event.target.value'/><br> -->
+    name:<input [(ngModel)]='name' /><br>
+    your enterd : {{name}}
 
 
 
-<table [border]="width">
-    <tr>
-        <th [attr.colspan]="size" >name</th>
-        <th>dtails</th>
-    </tr>
-    <tr>
-        <td [attr.colspan]="size">name</td>
-        <td>{{name|pcname}}</td>
-    </tr>
-    <tr>
-        <td  [attr.colspan]="size">rgno</td>
-        <td>{{rgno}}</td>
-    </tr>
-    <tbody *ngIf="showdetails">
-    <tr>
-        <td  [attr.colspan]="size">age</td>
-        <td>{{age}}</td>
-    </tr>
-    <tr>
-        <td  [attr.colspan]="size">course</td>
-        <td>{{course}}</td>
-    </tr>
-    <tr *ngFor="let core of cour;trackBy:trackByCode">
-        <td  [attr.colspan]="size">{{core.cname|uppercase}}</td>
-        <td>{{core.csub|currency:'INR'}}</td>
-    </tr>
-    </tbody>
-</table>
-<button (click)="getemp()">getdetails</button><br>
+    <table [border]="width">
+        <tr>
+            <th [attr.colspan]="size">name</th>
+            <th>dtails</th>
+        </tr>
+        <tr>
+            <td [attr.colspan]="size">name</td>
+            <td>{{name|pcname}}</td>
+        </tr>
+        <tr>
+            <td [attr.colspan]="size">rgno</td>
+            <td>{{rgno}}</td>
+        </tr>
+        <tbody *ngIf="showdetails">
+            <tr>
+                <td [attr.colspan]="size">age</td>
+                <td>{{age}}</td>
+            </tr>
+            <tr>
+                <td [attr.colspan]="size">course</td>
+                <td>{{course}}</td>
+            </tr>
+            <ng-container  *ngFor="let core of cour;trackBy:trackByCode">
+                <tr *ngIf="selectRadiochange=='all'||selectRadiochange==core.cname">
+                    <td [attr.colspan]="size">{{core.cname|uppercase}}</td>
+                    <td>{{core.csub|currency:'INR'}}</td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+    <button (click)="getemp()">getdetails</button><br>
 
-<button (click)="targeted()">{{showdetails?'hide':'show'}}details</button><br>
+    <button (click)="targeted()">{{showdetails?'hide':'show'}}details</button><br>
 
-<button [class.colorclass]="isactive" [ngClass]="apply()">click</button><br>
+    <button [class.colorclass]="isactive" [ngClass]="apply()">click</button><br>
 
-<button (click)='onClicked()'>clod</button><br>
+    <button (click)='onClicked()'>clod</button><br>
 
-<select class="dropdown">
-    <option value="mca">mca</option>
-</select>
 </body>
